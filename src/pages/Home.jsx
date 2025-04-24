@@ -7,12 +7,13 @@ export const Home = () => {
   const {store, dispatch} =useGlobalReducer()
 
 	return (
-		<div className="text-center mt-5">
-			<h1>My Pokemon blog.</h1>
-			<div className="row">
+		<div className="container mt-5">
+			<h2 className="text-danger fw-bold text-center px-3  MainTitle" >My Pokemon blog.</h2>
+			<div className="d-flex overflow-auto px-3">
 			{store.pokemons?.results.map((el, i) => <PokeCard key={i} name={el.name} url={el.url}/> )}
 			</div>
 			
 		</div>
 	);
 }; 
+//asdf
