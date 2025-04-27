@@ -11,15 +11,16 @@ export const Details = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        pokeApiServices.getSinglePokemon(id).then(data => dispatch({ type: 'pokemon_details', payload: data }))
+        pokeApiServices.getSinglePokemon(id).then(data => dispatch({ type: 'pokemon_details', payload: data }));
+        
 
     }, [])
     //Aqui hagamos una tarjeta para cada pokemon, tomará tiempo pero quedará cool.
     return (
         <div className="card mx-auto my-4" style={{maxWidth: "400px"}} >
             <img className="card-img-top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-            alt={store.details?.name} /
-            >
+            alt={store.details?.name} />
+            
             <div className="card-body text-center" >
                 <h2 className="card-title text-capitalize border border">
                     Details for {store.details?.name}.

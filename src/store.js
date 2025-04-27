@@ -2,11 +2,25 @@ export const initialStore=()=>{
   return{
     message: null,
     favorites: [],
+    items: [],
+    types: []
 
 }}
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
+    case 'pokemon_types': 
+    return {
+      ...store,
+      types: action.payload
+    }
+
+    case 'pokemon_items':
+      return{
+        ...store,
+        items: action.payload
+      }
+
     case 'toggle_favorite':
       const isFav = store.favorites.find(fav=> fav.id === action.payload.id);
       return {
